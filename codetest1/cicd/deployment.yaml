@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keygenerator
+  namespace: dev-ms
+  labels:
+    app.kubernetes.io/name:nye-dev
+    app.kubernetes.io/instance: nye-dev-instance
+    app.kubernetes.io/version: '1.0.0'
+    app.kubernetes.io/managed-by: kubectl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keygenerator
+  template:
+    metadata:
+      labels:
+        app: keygenerator
+    spec:
+      containers:
+        - image: 243016416530.dkr.ecr.ap-south-1.amazonaws.com/keygenerator
+          name: keygenerator
+          imagePullPolicy: Always
+          env:
+          - name: KEYGEN_SERVICE_DB_HOST
+            value: "52.66.126.131"
+          - name: KEYGEN_SERVICE_DB_PORT
+            value: "27017"
+          - name: KEYGEN_SERVICE_DB_NAME
+            value: "key-generator-service"
+          - name: KEYGEN_SERVICE_DB_USERNAME
+            value: "KeyGenService"
+          - name: KEYGEN_SERVICE_DB_PASSWORD
+            value: "m2B&9)}TFr"
+          ports:
+            - containerPort: 8897

@@ -1,0 +1,16 @@
+{
+  "status": "OK",
+  "message": "OTP generated successfully",
+  "result": {
+    "id": "621c57a797d8347088e03a10",
+    "identifierName": "Phone No",
+    "identifierValue": "7992411300",
+    "generatedBy": "KeyService",
+    "key": "954623",
+    "isOtp": true,
+    "isVerified": false,
+    "noOfVerifyAttempts": 0,
+    "createdAt": "2022-02-28T10:33:35.088",
+    "updatedAt": "2022-02-28T10:33:35.088"
+  }
+}
